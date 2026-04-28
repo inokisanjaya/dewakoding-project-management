@@ -10,6 +10,8 @@ services:
     volumes:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - laravel-network
 
   # Nginx Service
   nginx:
@@ -21,6 +23,12 @@ services:
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - laravel-network
+      
+networks:
+  laravel-network:
+    driver: bridge
 
 volumes:
   laravel-data:
