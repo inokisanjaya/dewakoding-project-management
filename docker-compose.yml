@@ -22,10 +22,6 @@ services:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
 
-networks:
-  laravel-network:
-    driver: bridge
-
 volumes:
   laravel-data:
     driver: local
